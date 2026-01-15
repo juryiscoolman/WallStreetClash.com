@@ -336,9 +336,19 @@ body {
     display: flex;
     gap: var(--spacing-md);
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     animation: fadeInUp 0.8s ease 1s forwards;
     opacity: 0;
+}
+
+.hero-app-store-badge {
+    display: inline-block;
+}
+
+.hero-app-store-badge .app-store-badge-img {
+    height: 70px;
+    width: auto;
 }
 
 .btn {
