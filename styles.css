@@ -202,6 +202,49 @@ body {
     z-index: -1;
 }
 
+/* Hero Avatars */
+.hero-avatars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.hero-avatar {
+    position: absolute;
+    width: auto;
+    height: 500px;
+    opacity: 0.6;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
+    animation: float 6s ease-in-out infinite;
+    z-index: 0;
+}
+
+.hero-avatar-left {
+    left: -50px;
+    bottom: 10%;
+    animation-delay: 0s;
+}
+
+.hero-avatar-right {
+    right: -50px;
+    bottom: 10%;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
 .hero-gradient {
     position: absolute;
     top: 0;
@@ -233,6 +276,7 @@ body {
     text-align: center;
     max-width: 800px;
     z-index: 1;
+    position: relative;
 }
 
 .hero-title {
@@ -352,10 +396,13 @@ body {
 
 /* Rank Icons */
 .rank-icon {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
     margin-bottom: var(--spacing-md);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .rank-icon-small {
@@ -370,6 +417,12 @@ body {
 
 .rank-card.rank-legendary .rank-icon {
     filter: drop-shadow(0 4px 12px rgba(255, 204, 51, 0.4));
+}
+
+/* Ensure images load properly */
+.rank-card img {
+    max-width: 100%;
+    height: auto;
 }
 
 @keyframes bounce {
@@ -572,6 +625,30 @@ section {
     margin-bottom: var(--spacing-lg);
 }
 
+.btn-app-store-badge {
+    display: inline-block;
+    text-decoration: none;
+    transition: var(--transition-base);
+    line-height: 0;
+}
+
+.btn-app-store-badge:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.app-store-badge-img {
+    height: 60px;
+    width: auto;
+    display: block;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.app-store-badge-img:hover {
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+}
+
+/* Legacy styles for backward compatibility */
 .btn-app-store {
     background: #000;
     color: #fff;
@@ -707,6 +784,19 @@ section {
         justify-content: center;
     }
     
+    .hero-avatar {
+        height: 300px;
+        opacity: 0.4;
+    }
+    
+    .hero-avatar-left {
+        left: -100px;
+    }
+    
+    .hero-avatar-right {
+        right: -100px;
+    }
+    
     .features-grid,
     .ranks-grid {
         grid-template-columns: 1fr;
@@ -737,5 +827,18 @@ section {
     
     .section-header {
         margin-bottom: var(--spacing-xl);
+    }
+    
+    .hero-avatar {
+        height: 200px;
+        opacity: 0.3;
+    }
+    
+    .hero-avatar-left {
+        left: -80px;
+    }
+    
+    .hero-avatar-right {
+        right: -80px;
     }
 }
