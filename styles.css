@@ -6,26 +6,27 @@
 }
 
 :root {
-    /* Colors */
-    --primary: #00D9FF;
-    --primary-dark: #00B8D4;
-    --secondary: #FF6B35;
-    --accent: #FFD700;
-    --success: #00FF88;
-    --danger: #FF3366;
+    /* Colors - WallStreetClash App Theme */
+    --primary: #33B34D; /* wscGreen: rgb(51, 179, 77) */
+    --primary-dark: #2A9A40;
+    --primary-light: #4CC565;
+    --secondary: #FFCC33; /* wscGold */
+    --accent: #FFCC33;
+    --success: #33B34D; /* Green for gains */
+    --danger: #CC3333; /* Red for losses */
     --text-primary: #FFFFFF;
-    --text-secondary: #B0B0B0;
-    --bg-dark: #0A0E27;
-    --bg-darker: #050811;
-    --bg-card: #121629;
-    --bg-card-hover: #1A1F3A;
-    --border: rgba(255, 255, 255, 0.1);
+    --text-secondary: #999999;
+    --bg-dark: #1A1A1A; /* wscBlack: rgb(26, 26, 26) */
+    --bg-darker: #0D0D0D; /* Darker black */
+    --bg-card: #1F1F1F;
+    --bg-card-hover: #2A2A2A;
+    --border: rgba(51, 179, 77, 0.2);
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #00D9FF 0%, #0066FF 100%);
-    --gradient-secondary: linear-gradient(135deg, #FF6B35 0%, #FF3366 100%);
-    --gradient-accent: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-    --gradient-hero: linear-gradient(135deg, #0A0E27 0%, #1A1F3A 50%, #0A0E27 100%);
+    --gradient-primary: linear-gradient(135deg, #33B34D 0%, #2A9A40 100%);
+    --gradient-secondary: linear-gradient(135deg, #CC3333 0%, #993333 100%);
+    --gradient-accent: linear-gradient(135deg, #FFCC33 0%, #FFB800 100%);
+    --gradient-hero: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #0D0D0D 100%);
     
     /* Typography */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -54,7 +55,8 @@
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
     --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.3);
-    --shadow-glow: 0 0 20px rgba(0, 217, 255, 0.3);
+    --shadow-glow: 0 0 20px rgba(51, 179, 77, 0.3);
+    --shadow-glow-strong: 0 0 30px rgba(51, 179, 77, 0.5);
     
     /* Transitions */
     --transition-fast: 0.15s ease;
@@ -87,7 +89,7 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(10, 14, 39, 0.95);
+    background: rgba(26, 26, 26, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
     transition: var(--transition-base);
@@ -217,8 +219,8 @@ body {
     right: 0;
     bottom: 0;
     background-image: 
-        radial-gradient(circle at 20% 50%, rgba(0, 217, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(51, 179, 77, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(51, 179, 77, 0.1) 0%, transparent 50%);
     animation: pulse 20s ease-in-out infinite;
 }
 
@@ -317,7 +319,7 @@ body {
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 30px rgba(0, 217, 255, 0.5);
+    box-shadow: 0 0 30px rgba(51, 179, 77, 0.5);
 }
 
 .btn-secondary {
@@ -346,6 +348,28 @@ body {
     border-right: 2px solid var(--primary);
     border-bottom: 2px solid var(--primary);
     transform: rotate(45deg);
+}
+
+/* Rank Icons */
+.rank-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: var(--spacing-md);
+}
+
+.rank-icon-small {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.rank-card .rank-icon {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.rank-card.rank-legendary .rank-icon {
+    filter: drop-shadow(0 4px 12px rgba(255, 204, 51, 0.4));
 }
 
 @keyframes bounce {
